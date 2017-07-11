@@ -1,0 +1,10 @@
+server:
+  port: 9002
+spring:
+  config:
+    name: server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/benxincaomu/config

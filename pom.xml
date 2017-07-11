@@ -5,8 +5,8 @@
 	<artifactId>cloud</artifactId>
 	<version>0.0.1</version>
 	<modules>
-		<module>web</module>
-		<module>config</module>
+		<module>config-client</module>
+		<module>config-server</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -21,16 +21,30 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency> <!-- 引入log4j2依赖 -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<dependency>  <!-- 加上这个才能辨认到log4j2.yml文件 -->
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 		<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <optional>true</optional>
-    </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
