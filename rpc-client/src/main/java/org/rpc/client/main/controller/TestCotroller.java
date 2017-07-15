@@ -4,16 +4,25 @@ package org.rpc.client.main.controller;
 import javax.annotation.Resource;
 
 import org.rpc.client.main.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestCotroller {
-    @Resource
+    @Autowired
     private TestService testService;
+    
+    @Resource
+    private TestService serviceHytrix;
     @GetMapping("result")
     public String getResult() {
         return testService.service();
+    }
+    
+    @GetMapping("result1")
+    public String getResult1() {
+        return serviceHytrix.service();
     }
 
 }
