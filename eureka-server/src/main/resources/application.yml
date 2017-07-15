@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: AAS
+server:
+  port: 11100
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/

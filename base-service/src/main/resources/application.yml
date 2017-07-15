@@ -1,0 +1,15 @@
+server:
+  port: 11101
+  
+  
+spring:
+  application:
+    name: service-0
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    service-url:
+      defaultZone: http://localhost:11100/eureka/
+    
