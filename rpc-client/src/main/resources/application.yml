@@ -5,5 +5,18 @@ spring:
     name: rpc-client
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:11100/eureka/
+endpoints:
+  sensitive: true
+  shutdown:
+    enabled: true
+    sensitive: true
+    
+security:
+  user:
+    name: admin
+    password: sftadmin
+    
