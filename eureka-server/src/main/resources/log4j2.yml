@@ -44,4 +44,4 @@ Configuration:
       level: ${sys:log.level.xjj}
       AppenderRef:
       - ref: CONSOLE
-      - ref: ROLLING_FILE
+     # - ref: ROLLING_FILE
