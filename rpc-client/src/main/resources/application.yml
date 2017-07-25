@@ -10,13 +10,17 @@ eureka:
     service-url:
       defaultZone: http://localhost:11100/eureka/
 endpoints:
-  sensitive: true
   shutdown:
     enabled: true
     sensitive: true
-    
 security:
+  basic:
+    path:
+    - /shutdown
   user:
     name: admin
     password: sftadmin
-    
+management:
+  security:
+    roles:
+    - ACTUATOR
