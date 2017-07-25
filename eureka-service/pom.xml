@@ -6,8 +6,8 @@
 		<artifactId>cloud</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>base-service</artifactId>
-	<name>base-service</name>
+	<artifactId>eureka-service</artifactId>
+	<name>eureka-service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
