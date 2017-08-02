@@ -1,2 +1,33 @@
 server:
   port: 9001
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.112.134
+    port: 5672
+    username: asdf
+    password: asdf
+eureka:
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:11100/eureka/
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: true
+security:
+  basic:
+    path:
+    - /shutdown
+  user:
+    name: admin
+    password: sftadmin

@@ -1,18 +1,37 @@
 server:
   port: 9003
 spring:
+  application:
+    name: configserver
   config:
-    name: server
+    name: config-server
+  rabbitmq:
+    host: 192.168.112.134
+    port: 5672
+    username: asdf
+    password: asdf
   cloud:
-    stream:
-      kafka:
-        binder:
-          zk-nodes:
-          - 192.168.112.134:2181
-          zk-connection-timeout: 300
-          brokers:
-          - 192.168.112.134
     config:
       server:
         git:
-          uri: http://192.168.112.134/test/cloudConfig
+          uri: http://192.168.112.134/test/cloudConfig.git
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:11100/eureka/
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: true
+security:
+  basic:
+    path:
+    - /shutdown
+  user:
+    name: admin
+    password: sftadmin
