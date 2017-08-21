@@ -13,25 +13,23 @@ public class ServiceHytrix implements TestService {
 
     @Override
     @HystrixCommand(groupKey = "aas", fallbackMethod = "fallback")
-    public String service() {
-        // TODO Auto-generated method stub
+    public String service(){
         System.out.println("==============================================================");
         return testService.service();
     }
 
     @Override
     @HystrixCommand(groupKey = "aas", fallbackMethod = "fallback")
-    public String upload(String name) {
-        // TODO Auto-generated method stub
+    public String upload(String name){
         return testService.upload(name);
     }
 
-    public String fallback() {
+    public String fallback(){
         System.out.println("==========================fallback====================================");
         return "fallback";
     }
 
-    public String fallback(String name) {
+    public String fallback(String name){
         System.out.println("==========================" + name + "====================================");
         return "fallback";
     }

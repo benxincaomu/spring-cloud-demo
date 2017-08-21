@@ -51,4 +51,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<build>
+        <finalName>${project.name}</finalName>
+    </build>
 </project>
