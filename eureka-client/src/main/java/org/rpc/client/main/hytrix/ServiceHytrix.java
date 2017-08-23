@@ -3,6 +3,7 @@ package org.rpc.client.main.hytrix;
 import javax.annotation.Resource;
 
 import org.rpc.client.main.service.TestService;
+import org.sft.commons.entity.User;
 import org.springframework.stereotype.Service;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
@@ -23,6 +24,10 @@ public class ServiceHytrix implements TestService {
     public String upload(String name){
         return testService.upload(name);
     }
+    @Override
+    public User save(User user){
+        return testService.save(user);
+    }
 
     public String fallback(){
         System.out.println("==========================fallback====================================");
@@ -33,4 +38,6 @@ public class ServiceHytrix implements TestService {
         System.out.println("==========================" + name + "====================================");
         return "fallback";
     }
+
+   
 }

@@ -1,10 +1,12 @@
 server:
-  port: 11101
+  port: 0
 spring:
   application:
     name: service-0
 eureka:
   instance:
+    #instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
   client:

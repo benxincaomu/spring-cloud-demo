@@ -18,6 +18,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
+		<dependency>
+		  <groupId>org.sft</groupId>
+		  <artifactId>commons</artifactId>
+		  <version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.name}</finalName>
