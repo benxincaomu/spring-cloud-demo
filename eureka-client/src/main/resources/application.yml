@@ -7,6 +7,10 @@ spring:
     multipart:
       enabled: true
       max-file-size: 102400kb
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
 eureka:
   client:
     register-with-eureka: true
@@ -28,6 +32,8 @@ management:
   security:
     roles:
     - ACTUATOR
+
 service-0:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    ServerListRefreshInterval: 5000
