@@ -32,7 +32,6 @@ management:
   security:
     roles:
     - ACTUATOR
-
 service-0:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
