@@ -14,7 +14,7 @@ spring:
     config:
       server:
         git:
-          uri: http://192.168.112.134/test/cloudConfig.git
+          uri: https://github.com/benxincaomu/config.git
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 1
