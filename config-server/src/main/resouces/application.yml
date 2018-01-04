@@ -3,8 +3,7 @@ server:
 spring:
   application:
     name: configserver
-  config:
-    name: config-server
+  
   rabbitmq:
     host: 192.168.112.134
     port: 5672
@@ -17,6 +16,7 @@ spring:
           uri: https://github.com/benxincaomu/config.git
 eureka:
   instance:
+    prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
   client:
